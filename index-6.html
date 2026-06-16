@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cynthia Accessories | Modern Luxury</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- Official Brand Palette --- */
+        :root {
+            --royal-blue: #0B2F61;
+            --brushed-gold: #D4AF37;
+            --charcoal: #2A2A2A;
+            --off-white: #F9F9F9;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--off-white);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            line-height: 1.8; /* Increased for better readability */
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* --- Scrolling Marquee --- */
+        .marquee-container {
+            background-color: var(--charcoal);
+            color: var(--brushed-gold);
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .marquee-content span {
+            margin: 0 40px;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- Floating Glass Header --- */
+        header {
+            position: fixed;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 50px;
+            padding: 12px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: top 0.3s ease;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--royal-blue);
+        }
+
+        .brand-name {
+            color: var(--royal-blue);
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header-cta {
+            background-color: var(--royal-blue);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .header-cta:hover {
+            background-color: var(--brushed-gold);
+            color: var(--charcoal);
+        }
+
+        /* --- Minimalist Hero --- */
+        .hero {
+            padding: 220px 5% 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 80vh; /* Replaced strict height with min-height */
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            color: var(--royal-blue);
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: var(--charcoal);
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--brushed-gold);
+            color: var(--charcoal);
+            padding: 20px 45px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- Asymmetric Bento Grid --- */
+        .bento-section {
+            padding: 40px 5% 120px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 25px; /* Increased gap */
+        }
+
+        .bento-item {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            background-color: var(--charcoal);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Keeps text at the bottom naturally */
+            min-height: 450px; /* Allows box to grow if text is long */
+        }
+
+        .item-tech {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+            min-height: 600px;
+        }
+
+        .item-fragrance {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+
+        .item-accents {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+
+        .bento-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.5s ease;
+            opacity: 0.8;
+            z-index: 1;
+        }
+
+        .bento-overlay {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 50px 40px; /* Thicker padding to prevent text jamming */
+            background: linear-gradient(to top, rgba(11, 47, 97, 0.95) 10%, rgba(11, 47, 97, 0.6) 60%, transparent 100%);
+            color: var(--white);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .bento-item:hover img {
+            transform: scale(1.08);
+            opacity: 0.4;
+        }
+
+        .bento-item:hover .bento-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .bento-overlay h3 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--brushed-gold);
+            line-height: 1.2;
+        }
+
+        .bento-overlay p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--off-white);
+        }
+
+        /* --- Modern Location Block --- */
+        .location-block {
+            background-color: var(--royal-blue);
+            color: var(--white);
+            margin: 0 5% 100px;
+            border-radius: 30px;
+            padding: 100px 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .location-content {
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .location-content i {
+            font-size: 3.5rem;
+            color: var(--brushed-gold);
+            margin-bottom: 30px;
+        }
+
+        .location-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .location-content p {
+            font-size: 1.2rem;
+            line-height: 2; /* Increased for address readability */
+            margin-bottom: 50px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 60px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        footer .serif {
+            font-size: 1.8rem;
+            color: var(--royal-blue);
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            font-size: 1rem;
+            color: #888;
+        }
+
+        /* --- Floating WhatsApp --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--brushed-gold);
+            color: var(--charcoal);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 900px) {
+            /* Switch to a flex column so grids never squash text on narrow screens */
+            .bento-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+            }
+            
+            .bento-item {
+                min-height: 450px; 
+            }
+            
+            header { top: 45px; width: 95%; padding: 10px 20px; }
+            .header-cta { display: none; }
+            
+            /* Text always visible on mobile since there is no 'hover' on touch screens */
+            .bento-overlay { 
+                transform: translateY(0); 
+                opacity: 1; 
+                background: linear-gradient(to top, rgba(11, 47, 97, 0.98) 20%, transparent 100%); 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+        
+            <span>✨ Unveil our latest luxury fragrances</span>
+            <span>📱 Discover high-fidelity tech gadgets</span>
+            <span>🎁 Claim a complimentary premium gift with every purchase</span>
+            <span>✨ Unveil our latest luxury fragrances</span>
+            <span>📱 Discover high-fidelity tech gadgets</span>
+        </div>
+    </div>
+
+    <header id="navbar">
+        <a href="#" class="brand-container">
+            <img src="1000176126.jpg" alt="Cynthia Accessories Logo" class="brand-logo">
+            <span class="brand-name serif">Cynthia Accessories</span>
+        </a>
+        <a href="https://wa.me/+2348120368800" target="_blank" class="header-cta">
+            Contact Boutique
+        </a>
+    </header>
+
+    <section class="hero">
+        <h1 class="serif">Curation of <span>Modern Luxury</span></h1>
+        <p>Your premier destination for sophisticated tech gadgets, captivating fragrances, and bespoke fashion accents.</p>
+        <a href="#collections" class="btn-gold">
+            Explore Collections <i class="fa-solid fa-arrow-down"></i>
+        </a>
+    </section>
+
+    <section id="collections" class="bento-section">
+        <div class="bento-grid">
+            
+            <div class="bento-item item-tech">
+                <img src="https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1200&auto=format&fit=crop" alt="Premium Tech Gadgets">
+                <div class="bento-overlay">
+                    <h3 class="serif">Tech Gadgets</h3>
+                    <p>Elevate your connectivity. Premium smartwatches, high-fidelity wireless earbuds, and ultra-durable data cables designed for those who demand the best.</p>
+                </div>
+            </div>
+
+            <div class="bento-item item-fragrance">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800&auto=format&fit=crop" alt="Luxury Fragrances">
+                <div class="bento-overlay">
+                    <h3 class="serif">Fragrances</h3>
+                    <p>Captivating, long-lasting designer scents curated to leave an unforgettable impression.</p>
+                </div>
+            </div>
+
+            <div class="bento-item item-accents">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop" alt="Fashion Accents">
+                <div class="bento-overlay">
+                    <h3 class="serif">Accents & Gifting</h3>
+                    <p>Sophisticated lapel pins for native wear, alongside beautifully packaged, customized gift bundles.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="location-block">
+        <div class="location-content">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <h2 class="serif">Shop Our Collections Online</h2>
+            <p>
+                Browse and order our full range of luxury fragrances,<br>
+                premium tech gadgets, and bespoke fashion accents<br>
+                — delivered straight to your door.
+            </p>
+            <a href="https://paystack.shop/cynthia-accessories" target="_blank" class="btn-gold" style="background-color: var(--white); color: var(--royal-blue); box-shadow: none;">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Our Store
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="serif">Cynthia Accessories</div>
+        <p>&copy; 2026. Elegance engineered for you.</p>
+    </footer>
+
+    <a href="https://wa.me/+2348120368800" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.getElementById("navbar");
+        
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 50) {
+                navbar.style.top = "15px"; 
+            } else {
+                navbar.style.top = "60px"; 
+            }
+        });
+    </script>
+</body>
+</html>
